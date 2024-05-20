@@ -1,7 +1,8 @@
 // import 'dart:io';
-import 'dart:js_util';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:my_flutter_02/pages/signed.dart';
 
 ///
 /// @NOTE
@@ -32,12 +33,11 @@ class SignInFormState extends State<SignInForm> {
     }
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text('Sign in...')));
-    // Future fetching = Future.delayed(const Duration(seconds: 3));
-    return Future(
-      () {},
-    ).timeout(const Duration(seconds: 3)).then((_) {
+    Timer(Duration(seconds: 3), () {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Sign In: ${fieldId.text}')));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const SignedPage()));
     });
   }
 

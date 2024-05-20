@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_02/components/SignInForm.dart';
+import 'package:my_flutter_02/pages/sign_in.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
               title: const Text(appTitle),
             ),
             body: const Padding(
-                padding: EdgeInsets.all(20), child: SignInForm())));
+                padding: EdgeInsets.all(20), child: SignInPage())));
   }
 }
 
